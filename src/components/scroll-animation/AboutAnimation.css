@@ -1,0 +1,61 @@
+.animation-section {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+.path-wrapper {
+  position: absolute;
+
+  top: 100px;
+  left: 50%;
+
+  width: 543px;
+  height: 693px;
+
+  transform: translateX(-50%);
+}
+
+.path-wrapper svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+}
+
+.path-bg {
+  fill: none;
+
+  stroke: #ffe7e7;
+
+  stroke-width: 2;
+}
+
+.path-progress {
+  fill: none;
+
+  stroke: #f90706;
+
+  stroke-width: 2.5;
+}
+
+.dot {
+  fill: #f90706;
+}
+
+.node {
+  opacity: 0;
+
+  transform-box: fill-box;
+  transform-origin: center;
+}

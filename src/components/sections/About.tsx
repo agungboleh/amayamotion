@@ -3,6 +3,7 @@
 import { LuBrainCircuit, LuDraftingCompass, LuHistory } from "react-icons/lu";
 import IconBox from "../ui/IconBox";
 import AboutAnimation from "../scroll-animation/AboutAnimation";
+import SectionHeading from "../ui/SectionHeading";
 
 const missions = [
   {
@@ -35,13 +36,16 @@ export default function AboutSection() {
         <div className="relative z-10">
           <div className="grid grid-cols-12">
             <div className="col-span-12">
-              <p className="text-xs font-bold text-brand-red">ABOUT US</p>
-              <p className="text-3xl font-bold text-black py-2.5">
-                Vision & <span className="text-brand-red">Mission</span>
-              </p>
+              <SectionHeading
+                label="about us"
+                title={
+                  <>
+                    Vision & <span className="text-brand-red">Mission</span>
+                  </>
+                }
+              />
             </div>
           </div>
-
           <div className="grid grid-cols-12 gap-6 lg:gap-10 mt-8 items-start mb-20">
             <div className="col-span-12 lg:col-span-5 relative">
               <div className="absolute -top-12 left-17 w-[calc(100%+60px)] h-[calc(100%+246px)] pointer-events-none z-0">
@@ -58,7 +62,6 @@ export default function AboutSection() {
                 </p>
               </div>
             </div>
-
             <div className="col-span-12 lg:col-span-7 flex flex-col gap-5">
               {missions.map((mission) => (
                 <div

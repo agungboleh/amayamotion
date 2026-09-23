@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
-import AboutAnimation from "@/components/scroll-animation/AboutAnimation";
 import AboutSection from "@/components/sections/About";
 import HeroSection from "@/components/sections/Hero";
+import ServicesSection from "@/components/sections/Services";
 
 export default function HomePage() {
   return (
@@ -10,8 +10,8 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
-        {/* <AboutAnimation /> */}
-        {/* <ServicesSection /> */}
+        <ServicesSection />
+        <HeroSection />
         {/* <ProductSection /> */}
         {/* <ProjectsSection /> */}
         {/* <ContactSection /> */}

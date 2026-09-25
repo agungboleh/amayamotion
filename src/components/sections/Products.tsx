@@ -1,18 +1,16 @@
 "use client";
-
 import {
-  RiAiGenerate2,
-  RiArchiveFill,
   RiArchiveLine,
   RiCalculatorLine,
   RiDashboardLine,
   RiDeviceLine,
-  RiExchange2Line,
   RiIdCardLine,
   RiP2pLine,
 } from "react-icons/ri";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
+import ProductsAnimation from "../scroll-animation/ProductsAnimation";
+import { useRef } from "react";
 
 const features = [
   { icon: RiP2pLine, label: "Multi-Branch Synchronization" },
@@ -24,10 +22,12 @@ const features = [
 ];
 
 export default function ProductsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
   return (
     <section
       id="products"
       className="relative w-full bg-white scroll-mt-20 py-20 overflow-hidden"
+      ref={sectionRef}
     >
       <div className="relative max-w-container-max mx-auto px-margin-x-desktop">
         <div className="relative z-10">
@@ -58,7 +58,7 @@ export default function ProductsSection() {
                 provide an enterprise-grade retail experience designed to scale
                 with your operations.
               </p>
-              <Button href="/#contact" size="md" className="mb-12">
+              <Button href="/#services" size="md" className="mb-12">
                 Request a Demo
               </Button>
               <div className="grid grid-cols-2 gap-6">
@@ -75,8 +75,8 @@ export default function ProductsSection() {
                 ))}
               </div>
             </div>
-            <div className="relative h-full">
-              <div className="absolute inset-0 bg-brand-base/5 rounded-3xl -rotate-2 scale-102" />
+            {/* <div className="relative h-full">
+              <div className="absolute inset-0 bg-brand-base/10 rounded-3xl -rotate-2 scale-102" />
               <div className="relative bg-white rounded-3xl p-2 shadow-2xl h-full">
                 <div className="rounded-2xl bg-white flex items-center justify-center h-full">
                   <img
@@ -86,7 +86,13 @@ export default function ProductsSection() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
+
+            <ProductsAnimation
+              imageSrc="/assets/products/junopos.webp"
+              imageAlt="Juno POS"
+              triggerRef={sectionRef}
+            />
           </div>
         </div>
       </div>

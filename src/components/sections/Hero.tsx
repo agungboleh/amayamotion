@@ -1,6 +1,8 @@
 "use client";
 import HeroMotion from "@/data/HeroMotion.json";
 import dynamic from "next/dynamic";
+import Button from "../ui/Button";
+import { RiArrowRightLongLine } from "react-icons/ri";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -21,6 +23,14 @@ export default function HeroSection() {
               language model integrations, we build secure, scalable systems
               designed to automate operations and drive real results.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <Button href="/#contact" icon={RiArrowRightLongLine}>
+                Let&apos;s Build Together
+              </Button>
+              <Button href="/#services" variant="secondary">
+                Our Services
+              </Button>
+            </div>
           </div>
           <div className="col-span-12 lg:col-span-6 xl:col-span-5 flex flex-col lg:justify-center h-screen">
             <div className="h-screen flex items-center justify-center">

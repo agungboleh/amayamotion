@@ -21,11 +21,11 @@ const features = [
   { icon: RiDeviceLine, label: "Omnichannel & Multi-Device Support" },
 ];
 
-export default function ProductsSection() {
+export default function ContactSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   return (
     <section
-      id="products"
+      id="contact"
       className="relative w-full bg-white scroll-mt-20 py-20 overflow-hidden"
       ref={sectionRef}
     >
@@ -34,10 +34,10 @@ export default function ProductsSection() {
           <div className="grid grid-cols-12">
             <div className="col-span-12">
               <SectionHeading
-                label="our products"
+                label="Get In Touch"
                 title={
                   <>
-                    Juno <span className="text-brand-red">Point of Sales</span>
+                    Contact <span className="text-brand-red">Us</span>
                   </>
                 }
               />
@@ -45,10 +45,9 @@ export default function ProductsSection() {
           </div>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="font-bold text-2xl mt-8 mb-4 text-brand-base">
-                The Most Comprehensive &amp; Cost-Effective Retail Management
-                Ecosystem in Indonesia.
-              </p>
+              <h3 className="font-bold text-2xl mt-8 mb-4 text-brand-base">
+                Tell Us About Your Project
+              </h3>
               <p className="text-brand-base/70 text-lg leading-relaxed mb-4">
                 Juno is more than just a point of sale it&apos;s the operational
                 hub for your growing business. Built for speed and reliability,

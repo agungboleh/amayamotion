@@ -27,7 +27,7 @@ export default function Button({
     secondary:
       "border border-brand-base/30 text-brand-base hover:bg-brand-base/10",
     ghost:
-      "border border-outline-variant/30 text-on-surface hover:bg-brand-base/10 hover:text-brand-base",
+      "border border-brand-red text-brand-red hover:bg-brand-red hover:text-white",
   };
   const sizeClasses = {
     sm: "px-4 py-2",

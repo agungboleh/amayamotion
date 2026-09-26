@@ -1,5 +1,7 @@
+import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import AboutSection from "@/components/sections/About";
+import ContactSection from "@/components/sections/Contact";
 import HeroSection from "@/components/sections/Hero";
 import ProductsSection from "@/components/sections/Products";
 import ProjectsSection from "@/components/sections/Projects";
@@ -15,9 +17,9 @@ export default function HomePage() {
         <ServicesSection />
         <ProductsSection />
         <ProjectsSection />
-        {/* <ContactSection /> */}
+        <ContactSection />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

@@ -17,25 +17,19 @@ const sectionIds = [
 export default function Navbar() {
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/projects/");
-
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(isProjectPage);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Scroll listener for background + active section + URL hash
   useEffect(() => {
     const handleScroll = () => {
-      // Background navbar
       if (!isProjectPage) {
         setScrolled(window.scrollY > 20);
       }
-
-      // Project pages don't have section navigation
       if (isProjectPage) {
         setActiveSection("");
         return;
       }
-
       const navbarHeight = 80;
       const scrollY = window.scrollY + navbarHeight + 10;
 
@@ -49,20 +43,15 @@ export default function Navbar() {
           break;
         }
       }
-
-      // Update active navigation
       setActiveSection(currentSection);
-
-      // Update URL hash without triggering another scroll
       const currentHash = window.location.hash.replace("#", "");
-
       if (currentHash !== currentSection) {
         window.history.replaceState(
           null,
           "",
           currentSection === "home"
             ? window.location.pathname
-            : `#${currentSection}`
+            : `#${currentSection}`,
         );
       }
     };
@@ -119,7 +108,6 @@ export default function Navbar() {
       }`}
     >
       <div className="flex justify-between items-center w-full px-margin-x-desktop max-w-container-max mx-auto h-20">
-
         {/* Logo */}
         <Link
           href="/"
@@ -130,13 +118,11 @@ export default function Navbar() {
             alt="Amaya Logo"
             className="w-auto h-10"
           />
-
-          <span className="text-4xl font-bold tracking-tight leading-none">
-            AMAYA
+          <span className="text-2xl font-bold tracking-tight leading-none">
+            AMAYA PERDANA KREASINDO
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden xl:flex items-center gap-8">
           {navItems.map((item) => {
             const sectionId = getSectionId(item.label);
@@ -159,7 +145,6 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Mobile Menu Button */}
         <button
           className="flex justify-between items-center xl:hidden transition-colors duration-300 text-black"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -171,7 +156,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {mobileOpen && (
         <nav className="xl:hidden bg-white border-t-2 border-black/10 mx-margin-x-desktop py-10 flex flex-col gap-5">
           {navItems.map((item) => {
